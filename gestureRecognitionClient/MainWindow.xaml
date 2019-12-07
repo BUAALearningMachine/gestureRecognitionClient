@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="手势识别" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image_camera" Margin="10" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock_camera" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="119"><Run Text="摄像头设备"/><Run Text="："/></TextBlock>
+        <ComboBox x:Name="comboBox_camera" HorizontalAlignment="Left" Margin="134,9,0,0" VerticalAlignment="Top" Width="253"/>
+        <Button x:Name="button_cameraConnect" Content="连接" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="82"/>
+        <Button x:Name="button_cameraClose" Content="关闭" Grid.Column="1" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button_cameraRecognition" Content="识别" Grid.Column="2" HorizontalAlignment="Left" Margin="9.667,10,0,0" VerticalAlignment="Top" Width="86"/>
+        <Button x:Name="button_gesturePlay" Content="播报" Grid.Column="2" HorizontalAlignment="Left" Margin="100.667,10,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="textBox_gestureResult" Grid.Column="2" Margin="10" Grid.Row="1" TextWrapping="Wrap" Text=""/>
+
     </Grid>
 </Window>
