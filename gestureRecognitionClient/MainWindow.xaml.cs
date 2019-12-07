@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Grpc;
+using Grpc.Core;
+using Recognition;
+
 
 namespace gestureRecognitionClient
 {
@@ -25,6 +29,12 @@ namespace gestureRecognitionClient
             InitializeComponent();
         }
 
+        private void button_cameraRecognition_Click(object sender, RoutedEventArgs e)
+        {
+            var channel = new Channel("127.0.0.1:50052", ChannelCredentials.Insecure);
+            var client = new RecognitionClient(new RecognitionServer.RecognitionServerClient(channel));
+
         }
     }
 }
+
